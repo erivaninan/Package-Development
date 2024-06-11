@@ -1,6 +1,5 @@
 # README
 
-## Projet Python ISDS1 2024
 
 ### Présentation Générale
 
@@ -85,7 +84,6 @@ Pour installer et utiliser ce projet, suivez les étapes ci-dessous :
 ### Auteur
 
 Erivan INAN
-inanerivan@gmail.com
 
 ```bash
 git clone <url-du-depot>
