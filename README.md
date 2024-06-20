@@ -86,8 +86,8 @@ Pour installer et utiliser ce projet, suivez les étapes ci-dessous :
 Erivan INAN
 
 ```bash
-git clone <url-du-depot>
-cd <nom-du-repertoire>
+git clone <https://github.com/erivaninan/Linear-Model-Package>
+cd <Linear-model-Package>
 pip install -r requirements.txt
 python main.py
 
