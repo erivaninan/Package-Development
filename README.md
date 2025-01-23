@@ -3,7 +3,7 @@
 
 ### Présentation Générale
 
-Ce projet a été réalisé dans le cadre du cours ISDS1 à l'ISUP entre février et avril 2024. L'objectif du projet est d'appliquer les outils et méthodes vus en cours pour analyser des jeux de données et construire des modèles linéaires. Le projet se divise en deux parties principales :
+Ce projet a été réalisé dans le cadre du cours de programmation Python à l'ISUP, Sorbonne Université, entre février et avril 2024. L'objectif du projet est d'appliquer les outils et méthodes vus en cours pour analyser des jeux de données et construire des modèles linéaires. Le projet se divise en deux parties principales :
 
 1. Analyse statistique et modèle linéaire
 2. Calculateur d'empreinte carbone
