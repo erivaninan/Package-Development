@@ -8,7 +8,7 @@ Ce projet a été réalisé dans le cadre du cours de programmation Python à l'
 1. Analyse statistique et modèle linéaire
 2. Calculateur d'empreinte carbone
 
-Ce document se concentre sur la partie 1 : analyse statistique et modèle linéaire.
+Ce repository se concentre sur la partie 1 : Analyse statistique et modèle linéaire.
 
 ### Partie 1 : Analyse Statistique et Modèle Linéaire
 
