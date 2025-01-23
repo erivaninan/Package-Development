@@ -50,7 +50,7 @@ Le module `main.py` est le point d'entrée principal du programme. Il exécute l
 
 #### statistics.py
 
-Le module `statistics.py` contient des fonctions pour l'analyse statistique :
+Le module `statistics.py` contient les fonctions suivantes pour l'analyse statistique :
 
 - `stats_des(data)` : Affiche les statistiques descriptives de toutes les colonnes numériques du jeu de données.
 - `variance(data)` : Affiche la variance de toutes les colonnes numériques du jeu de données.
@@ -62,7 +62,7 @@ Le module `statistics.py` contient des fonctions pour l'analyse statistique :
 
 #### visualisation.py
 
-Le module `visualisation.py` contient des fonctions pour la visualisation des données :
+Le module `visualisation.py` contient les fonctions suivantes pour la visualisation des données :
 
 - `calculate_consumption_sums(df, categories)` : Calcule la somme de la consommation pour chaque catégorie spécifiée.
 - `plot_pie_chart(data, title)` : Affiche un graphique en secteurs basé sur les données fournies.
@@ -74,9 +74,17 @@ Le module `visualisation.py` contient des fonctions pour la visualisation des do
 
 ### Installation et Utilisation
 
-Pour installer et utiliser ce projet, suivez les étapes ci-dessous :
+Pour installer et utiliser ce package, suivez les étapes ci-dessous :
 
 1. Clonez le dépôt du projet.
+
+```bash
+git clone <https://github.com/erivaninan/Carbon-Calculator-Package>
+cd <Carbon-Calculator-Package>
+pip install -r requirements.txt
+python main.py
+```
+
 2. Assurez-vous d'avoir Python installé sur votre machine.
 3. Installez les dépendances nécessaires : `pandas`, `matplotlib`, `seaborn`.
 4. Exécutez le script principal `main.py` pour lancer l'analyse et la visualisation des données.
@@ -84,10 +92,4 @@ Pour installer et utiliser ce projet, suivez les étapes ci-dessous :
 ### Auteur
 
 Erivan INAN
-
-```bash
-git clone <https://github.com/erivaninan/Linear-Model-Package>
-cd <Linear-model-Package>
-pip install -r requirements.txt
-python main.py
 
