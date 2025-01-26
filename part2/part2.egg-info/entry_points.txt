@@ -1,0 +1,2 @@
+[console_scripts]
+part2 = part2.main:main

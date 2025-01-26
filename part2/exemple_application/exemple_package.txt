@@ -1,0 +1,70 @@
+PS C:\Users\beriv\ProjetISDS\part2> python main.py
+   Identifiant de l'élément  ...                   Nom attribut français
+0                     21818  ...   50-100 sièges, trajet de 2000-3000 km
+1                     21822  ...  100-180 sièges, trajet de 3000-4000 km
+2                     21821  ...  180-250 sièges, trajet de 2000-3000 km
+3                     21819  ...   50-100 sièges, trajet de 1000-2000 km
+4                     21817  ...  100-180 sièges, trajet de 1000-2000 km
+
+[5 rows x 5 columns]
+  Type Ligne  Identifiant de l'élément  ... Autres GES CO2b
+0    Elément                     12892  ...        0.0  0.0
+1      Poste                     12892  ...        0.0  0.0
+2      Poste                     12892  ...        0.0  0.0
+3    Elément                     12893  ...        0.0  0.0
+4      Poste                     12893  ...        0.0  0.0
+
+[5 rows x 49 columns]
+Veuillez entrer votre consommation pour les différentes sous-catégories (spécifiez la fréquence : Q pour quotidienne, H pour hebdomadaire, M pour mensuelle, A pour annuelle) :
+
+Catégorie : Transports
+Avion (en km parcourus) : 2000
+Spécifiez la fréquence (Q/H/M/A) pour Avion : a
+Métro (en km parcourus) : 50
+Spécifiez la fréquence (Q/H/M/A) pour Métro : h
+RER (en km parcourus) : 30
+Spécifiez la fréquence (Q/H/M/A) pour RER : h
+TGV (en km parcourus) : 400
+Spécifiez la fréquence (Q/H/M/A) pour TGV : a
+Voiture (en km parcourus) : 200
+Spécifiez la fréquence (Q/H/M/A) pour Voiture : h
+Bus (en km parcourus) : 20
+Spécifiez la fréquence (Q/H/M/A) pour Bus : h
+
+Catégorie : Logement
+Fioul (en litres) : 50
+Spécifiez la fréquence (Q/H/M/A) pour Fioul : m
+Gaz (en m³) : 500
+Spécifiez la fréquence (Q/H/M/A) pour Gaz : m
+Électricité (en kWh) : 200
+Spécifiez la fréquence (Q/H/M/A) pour Électricité : m
+
+Catégorie : Alimentation
+Repas (en nombre) : 90
+Spécifiez la fréquence (Q/H/M/A) pour Repas : m
+Viande de boeuf (en kg) : 1
+Spécifiez la fréquence (Q/H/M/A) pour Viande de boeuf : h
+Légumes (en kg) : 3
+Spécifiez la fréquence (Q/H/M/A) pour Légumes : h
+
+Catégorie : Électronique
+Tablette (en unités) : 1
+Spécifiez la fréquence (Q/H/M/A) pour Tablette : a
+Smartphone (en unités) : 1
+Spécifiez la fréquence (Q/H/M/A) pour Smartphone : a
+
+Total annuel des émissions de CO2 : 6692.04 kg CO2eq
+Avion : 418.00 kg CO2eq
+Métro : 14.82 kg CO2eq
+RER : 8.89 kg CO2eq
+TGV : 1.48 kg CO2eq
+Voiture : 0.00 kg CO2eq
+Bus : 11.65 kg CO2eq
+Fioul : 0.00 kg CO2eq
+Gaz : 0.00 kg CO2eq
+Électricité : 2085.60 kg CO2eq
+Repas : 2203.20 kg CO2eq
+Viande de boeuf : 1835.60 kg CO2eq
+Légumes : 0.00 kg CO2eq
+Tablette : 82.80 kg CO2eq
+Smartphone : 30.00 kg CO2eq
