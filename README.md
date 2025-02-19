@@ -70,22 +70,6 @@ Le module `visualisation.py` contient les fonctions suivantes pour la visualisat
 - `mat_correlation(data)` : Affiche une carte de chaleur de la matrice de corrélation.
 - `boxplots(data)` : Affiche des boxplots pour toutes les colonnes numériques du jeu de données.
 
-### Installation et Utilisation
-
-Pour installer et utiliser ce package, suivez les étapes ci-dessous :
-
-1. Clonez le dépôt du projet.
-
-```bash
-git clone <https://github.com/erivaninan/Carbon-Calculator-Package>
-cd <Carbon-Calculator-Package>
-pip install -r requirements.txt
-python main.py
-```
-
-2. Assurez-vous d'avoir Python installé sur votre machine.
-3. Installez les dépendances nécessaires : `pandas`, `matplotlib`, `seaborn`.
-4. Exécutez le script principal `main.py` pour lancer l'analyse et la visualisation des données.
 
 ### Partie 2 : Calculateur d'empreinte carbone
 
@@ -128,8 +112,8 @@ Pour utiliser ce calculateur d'empreinte carbone, suivez les étapes suivantes :
 1. Clonez le dépôt ou téléchargez les fichiers du projet.
 
 ```bash
-git clone <https://github.com/erivaninan/Carbon-Calculator-Package>
-cd <Carbon-Calculator-Package>
+git clone <https://github.com/erivaninan/Package-Development>
+cd <Package-Development>
 pip install -r requirements.txt
 python main.py
 ```
