@@ -1,115 +1,134 @@
-# Développement de package 🌟
+# Développement de package 🌱
+
+### Overview 🌟
+
+This project was developed as part of the Python Programming course at Sorbonne University, between February and April 2024.
+Its goal is to apply programming **concepts and statistical methods to analyze datasets and build linear models**, while also developing a **carbon footprint calculator**.
+
+---
+
+The project is divided into two main parts:
+
+**1. Statistical Analysis & Linear Modeling**
+
+**2. Carbon Footprint Calculator**
+
+--- 
+
+### Part 1: Statistical Analysis & Linear Modeling
+
+#### 1.1 Dataset 📊
+
+The dataset for this section was provided by RTE and records electricity production by energy source during the year 2020 (four entries per minute).
+
+The main variables include:
+- Date and Time
+- Total consumption (MW) with day-ahead and same-day forecasts
+- Production by source: fuel, coal, gas, nuclear, wind, solar, etc. (MW)
+- Imports/exports (MW)
+- Estimated CO₂ emissions (g/kWh)
+
+#### 1.2 Statistical Analysis & Visualization
+
+Implemented in `statistics.py` and `visualisation.py`.
+
+- Descriptive statistics for numerical variables
+- Correlation analysis between variables
+- Multiple visualization tools (heatmaps, histograms, scatter matrices, trend plots, etc.)
+
+#### 1.3 Ordinary Least Squares
+
+A linear regression model is built to explain CO₂ emissions based on selected covariates.
+The method is implemented in the `OrdinaryLeastSquares` class, with the following methods:
+
+- `fit` : Fits the OLS estimator β̂ from input data,
+- `predict` : Predicts outcomes for test data,
+- `get_coeffs` : Returns estimated coefficients,
+- `determination_coefficient` : Computes and returns R².
+
+### Pipeline ⚙️
+
+#### - `main.py`
+
+Main entry point of the project. 
+
+Handles:
+- Data loading and preprocessing,
+- Statistical analysis,
+- Visualization of results.
+
+Functions:
+- `convertir_frequence(consommation, frequence)` : Converts consumption to annual values.
+- `main()` : Orchestrates the workflow.
 
 
-### Présentation Générale
+#### - `statistics.py`
 
-Ce projet a été réalisé dans le cadre du cours de programmation Python à l'ISUP, Sorbonne Université, entre février et avril 2024. L'objectif du projet est d'appliquer les outils et méthodes vus en cours pour analyser des jeux de données et construire des modèles linéaires. Le projet se divise en deux parties principales :
+This module contains the following functions for statistical analysis:
 
-1. Analyse statistique et modèle linéaire
-2. Calculateur d'empreinte carbone
+- `stats_des(data)` : Prints descriptive statistics of all numerical columns of the dataset.
+- `variance(data)` : Prints the variance of all numerical columns of the dataset.
+- `covariance(data)` : Prints covariance matrix of all numerical columns of the dataset.
+- `correlation(data)` : Prints correlation matrix of all numerical columns of the dataset.
+- `matrice_correlation(data)` : Prints Correlation heatmap.
+- `table_de_contingence_multi(data, cols, aggfunc='size')` : Creates and displays Multi-variable contingency tables.
+- `categorize_column(data, column, bins, labels)` : Categorizes numeric columns.
 
-### Partie 1 : Analyse Statistique et Modèle Linéaire
+#### - `visualisation.py`
 
-#### 1.1 Jeu de Données
+This module contains the following functions for data visualization:
 
-Les données utilisées pour cette partie proviennent de la société RTE et enregistrent la quantité d’électricité produite pour chaque filière du mix énergétique durant l’année 2020 (quatre enregistrements par minute). Les colonnes principales incluent :
-
-- Date et Heure
-- Consommation totale en MW, avec prévisions à J-1 et à J
-- Production de fioul, charbon, gaz, nucléaire, éolien, solaire, etc. en MW
-- Importation/exportations en MW
-- Estimation des émissions de CO2 en g/kWh
-
-#### 1.2 Analyse Statistique et Visualisation
-
-Les fonctions pour l'analyse statistique et la visualisation des données sont implémentées dans les modules `statistics.py` et `visualisation.py`. Les principales fonctionnalités incluent :
-
-- Statistiques descriptives pour analyser et comparer les enregistrements numériques
-- Analyse de corrélation entre les différentes variables
-- Visualisation des données sous forme de graphiques divers
-
-#### 1.3 Moindres Carrés Ordinaires
-
-Un modèle linéaire est construit pour expliquer le taux d'émission de CO2 en fonction de certaines covariables du jeu de données. La méthode des moindres carrés ordinaires est implémentée dans une classe `OrdinaryLeastSquares` avec les méthodes suivantes :
-
-- `fit` : Prend des données `X` et `y` en entrée et calcule l'estimateur des moindres carrés β̂.
-- `predict` : Prend des données de test `Xt` et renvoie les prédictions associées.
-- `get_coeffs` : Retourne les valeurs des coefficients estimés.
-- `determination_coefficient` : Calcule et renvoie le coefficient de détermination R².
-
-### Organisation du Code
-
-#### main.py
-
-Le module `main.py` est le point d'entrée principal du programme. Il exécute les fonctions nécessaires pour lire les données, effectuer des analyses et visualiser les résultats. Voici un aperçu des principales fonctions :
-
-- `convertir_frequence(consommation, frequence)` : Convertit la consommation en consommation annuelle.
-- `main()` : Fonction principale pour l'exécution du programme.
-
-#### statistics.py
-
-Le module `statistics.py` contient les fonctions suivantes pour l'analyse statistique :
-
-- `stats_des(data)` : Affiche les statistiques descriptives de toutes les colonnes numériques du jeu de données.
-- `variance(data)` : Affiche la variance de toutes les colonnes numériques du jeu de données.
-- `covariance(data)` : Affiche la matrice de covariance de toutes les colonnes numériques du jeu de données.
-- `correlation(data)` : Affiche la matrice de corrélation de toutes les colonnes numériques du jeu de données.
-- `matrice_correlation(data)` : Affiche une matrice de corrélation sous forme de carte de chaleur.
-- `table_de_contingence_multi(data, cols, aggfunc='size')` : Crée et affiche une table de contingence pour plusieurs colonnes catégorielles.
-- `categorize_column(data, column, bins, labels)` : Crée une nouvelle colonne catégorisée à partir d'une colonne numérique.
-
-#### visualisation.py
-
-Le module `visualisation.py` contient les fonctions suivantes pour la visualisation des données :
-
-- `calculate_consumption_sums(df, categories)` : Calcule la somme de la consommation pour chaque catégorie spécifiée.
-- `plot_pie_chart(data, title)` : Affiche un graphique en secteurs basé sur les données fournies.
-- `plot_consumption_trends(dataRTE, categories)` : Affiche les tendances de consommation annuelle pour chaque catégorie sur un même graphique.
-- `matriceplots(data)` : Crée une matrice de graphiques pairplot pour visualiser les relations entre les variables.
-- `histogramme(data)` : Affiche les histogrammes pour toutes les colonnes numériques du jeu de données.
-- `mat_correlation(data)` : Affiche une carte de chaleur de la matrice de corrélation.
-- `boxplots(data)` : Affiche des boxplots pour toutes les colonnes numériques du jeu de données.
+- `calculate_consumption_sums(df, categories)` : Computes the Sum of consumption per category.
+- `plot_pie_chart(data, title)` : Plots Pie chart visualization based on provided data.
+- `plot_consumption_trends(dataRTE, categories)` : Plots Annual consumption trends per category in the same plot.
+- `matriceplots(data)` : Creates a Pairplot of variables to visualize relations between variables.
+- `histogramme(data)` : Plots Histograms for numerical columns.
+- `mat_correlation(data)` : Correlation heatmap.
+- `boxplots(data)` : Boxplots for numeric columns.
 
 
-### Partie 2 : Calculateur d'empreinte carbone
+---
 
-#### 2.1 Jeu de Données
+### Part 2: Carbon Footprint Calculator 🌍
 
-Le jeu de données utilisé pour cette partie provient de la base de données carbone, contenant des informations sur les émissions de CO2 par poste de consommation.
+#### 2.1 Dataset 📊
 
-#### 2.2 Objectifs
+The dataset comes from a carbon database, containing CO₂ emission factors by consumption category.
 
-L'objectif de cette partie est de développer un calculateur d'empreinte carbone capable de :
-- Calculer les émissions de CO2 en fonction des consommations données.
-- Afficher les résultats des émissions de CO2.
-- Calculer les émissions de CO2 par catégorie en fonction des consommations données.
+#### 2.2 Objectives
 
-### Modules et Fonctions
+The calculator is designed to:
+- Compute total CO₂ emissions based on user consumption data,
+- Display results interactively,
+- Break down emissions by category.
 
-#### Module `CalcuCarbone.py`
+### Modules & Classes
 
-**Classe `CarbonCalculator`**:
-- `__init__(self, data)`: Initialise le calculateur d'empreinte carbone avec les données fournies. Le paramètre `data` est un `pandas.DataFrame` contenant les données d'émission de CO2.
-- `calculer_emissions(self, consommations)`: Calcule les émissions de CO2 en fonction des consommations données. Le paramètre `consommations` est un dictionnaire contenant les consommations par poste. La fonction retourne un dictionnaire des émissions par catégorie.
-- `convertir_frequence(consommation, frequence)`: Convertit la consommation en consommation annuelle. Complétez le paramètre `frequence` par 'q' pour quotidienne, 'h' pour hebdomadaire, 'm' pour mensuelle, ou 'a' pour annuelle.
-- `afficher_resultats(self, consommations)`: Affiche les résultats des émissions de CO2. Le paramètre `consommations` est un dictionnaire contenant les consommations par poste.
-- `calculer_emissions_par_categorie(self, consommations, categories)`: Calcule les émissions de CO2 par catégorie en fonction des consommations données. Le paramètre `categories` est un dictionnaire des catégories et sous-catégories. La fonction retourne un dictionnaire des émissions par catégorie.
+#### - Module `CalcuCarbone.py`
 
-#### Module `main.py`
+**Class `CarbonCalculator`**:
+- `__init__(self, data)`: Initializes calculator with a pandas.DataFrame.
+- `calculer_emissions(self, consommations)`: Computes CO₂ emissions based on the given consumption data. The parameter `consommations` is a dictionary containing consumption values by category. The function returns a dictionary of emissions per category.
+- `convertir_frequence(consommation, frequence)`: Converts consumption into annual consumption. The parameter frequence should be set to 'q' for daily, 'h' for weekly, 'm' for monthly, or 'a' for annual.
+- `afficher_resultats(self, consommations)`: Displays the CO₂ emissions results. The parameter `consommations` is a dictionary containing consumption values by category.
+- `calculer_emissions_par_categorie(self, consommations, categories)`: Computes CO₂ emissions by category based on the given consumption data. The parameter `categories` is a dictionary of categories and subcategories. The function returns a dictionary of emissions per category.
 
-**Fonction `main()`**:
-- C'est la fonction principale qui exécute les différentes fonctions et méthodes du projet. Elle lit les fichiers CSV contenant les données, initialise le calculateur d'empreinte carbone, demande à l'utilisateur sa consommation annuelle par catégorie, calcule et affiche les résultats des émissions de CO2, et génère un graphique des émissions par catégorie.
+#### - Module `main.py`
 
-#### Module `loading.py`
+**Function `main()`**:
+This is the main function that runs the different methods of the project. It reads the CSV files containing the data, initializes the carbon footprint calculator, prompts the user for their annual consumption by category, computes and displays the CO₂ emissions results, and generates a chart of emissions by category.
 
-**Fonction `lecture2(fichier)`**:
-- Cette fonction charge le fichier CSV et retourne un `pandas.DataFrame` contenant les données chargées. Le paramètre `fichier` est le chemin vers le fichier CSV. La fonction gère également les valeurs manquantes en les remplaçant par des valeurs par défaut (0 pour les valeurs numériques et des chaînes vides pour les chaînes de caractères).
 
-### Installation et Utilisation
+#### - Module `loading.py`
 
-Pour utiliser ce calculateur d'empreinte carbone, suivez les étapes suivantes :
+**Function `lecture2(fichier)`**:
+This function loads the CSV file and returns a `pandas.DataFrame` containing the data. The parameter `fichier` is the path to the CSV file. The function also handles missing values by replacing them with default values (0 for numeric fields and empty strings for text fields).
 
-1. Clonez le dépôt ou téléchargez les fichiers du projet.
+--- 
+
+### Installation & Usage 🔧
+
+1. Clone the repository:
 
 ```bash
 git clone <https://github.com/erivaninan/Package-Development>
@@ -118,11 +137,23 @@ pip install -r requirements.txt
 python main.py
 ```
 
-2. Installez les dépendances nécessaires listées dans le fichier `setup.py`.
-3. Exécutez le module `main.py` pour démarrer le calculateur et suivre les instructions à l'écran pour entrer vos consommations annuelles par catégorie.
-4. Visualisez les résultats des émissions de CO2 par catégorie.
-5. En cas d'obtention de résultats non cohérents avec la réalité, voir le dossier `exemple_application` où les valeurs entrées dans chaques catégories sont précisées dans le fichier .txt et le graphique résultat joint en fichier .png 
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-### Auteur
+3. Run the main program:
 
-Erivan INAN
+```bash
+python main.py
+```
+
+4. Enter your annual consumption values by category.
+
+5. View results and visualizations of CO₂ emissions per category.
+
+*If results seem inconsistent with reality, check the folder `exemple_application/` for examples of input values (.txt) and corresponding output plots (.png).*
+
+---
+
+This project demonstrates the integration of statistical modeling and sustainability applications, bridging energy data analysis with a practical carbon footprint calculator.
